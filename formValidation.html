@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./formValidation.css">
+    <script src="./formValidation2.js" defer></script>
+
+    <title>validate</title>
+</head>
+<body>
+    <form novalidate>
+
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="name likho" >
+
+        <label for="email">email</label>
+        <input type="email" name="email" id="email" required minlength="8" >
+        
+
+        <label for="country">country</label>
+        <input type="text" name="country" id="country" required placeholder="Jai Hind">
+
+        <label for="zipC">Zip Code</label>
+        <input type="text" name="zipC" id="zipC" placeholder="nai pata toh google karo">
+
+        <label for="pswd">Password</label>
+        <input type="password" name="pswd" id="pswd" required>
+
+        <label for="pswdcon">Password Confirmation</label>
+        <input type="password" name="pswdcon" id="pswdcon" >
+
+        <button>Submit</button>
+    </form>
+</body>
+</html>
