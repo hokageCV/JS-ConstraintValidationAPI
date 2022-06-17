@@ -4,6 +4,8 @@ const email = document.getElementById('email');
 const pswd1 = document.getElementById('pswd');
 const pswd2 = document.getElementById('pswdcon');
 
+const smallDiv = document.querySelector('small');
+
 email.addEventListener('input', checkEmail);
 
 pswd2.addEventListener('input', checkPswd );
@@ -11,6 +13,14 @@ pswd2.addEventListener('input', checkPswd );
 form.addEventListener('submit', function(event){
     if(form.checkValidity()==false){
         event.preventDefault();
+        event.stopPropagation();
+
+        smallDiv.textContent = "Somethings wrong I can feel it!";
+        smallDiv.classList.add("error");
+    }
+    else{
+        smallDiv.textContent = "form submitted";
+        smallDiv.classList.add("success");
         event.stopPropagation();
     }
 });
@@ -45,15 +55,8 @@ function checkPswd(){
         pswd1.classList.add("error");
         pswd2.classList.add("error");
     }
-    else if (form.checkValidity() == false){
-        pswd2.setCustomValidity("kuch toh gadbad hai ");
-        pswd2.reportValidity();
-
-        pswd1.classList.add("error");
-        pswd2.classList.add("error");
-    }
     // passwords are matching
-    else{
+    else if( pswd1.value == pswd2.value ){
         pswd1.classList.add("success");
         pswd2.classList.add("success");
     }
